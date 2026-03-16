@@ -46,10 +46,10 @@ export default function PortfolioApp() {
       <header className="max-w-6xl mx-auto flex items-center justify-between py-6">
         <div>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
-            Nitin — Fullstack & Mobile Dev
+            Nitin — Fullstack & Android Dev
           </h1>
           <p className="mt-2 text-sm sm:text-base text-gray-300">
-            Kolkata · JavaScript, React, Node.js · exploring Java
+            Kolkata · Next.js, JS, TS, React, Node.js ,Express· exploring Java
           </p>
         </div>
         <nav className="flex items-center gap-3">
@@ -93,15 +93,14 @@ export default function PortfolioApp() {
               </h2>
 
               <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed">
-                With over four years of hands-on experience building
-                production-grade applications, I don’t just develop apps — I
-                architect real-time systems. I specialize in JavaScript, React,
-                Node.js, and Socket.IO to create fast, reliable, and scalable
-                experiences that feel alive. Whether it’s live data pipelines,
-                interactive map systems, or seamless real-time communication, I
-                build with precision and purpose. No guesswork. No shortcuts.
-                Just clean engineering, high performance, and interfaces that
-                feel effortless
+                With over four years of hands-on experience building production-grade applications, I’m **Nitin**, a self-taught Full-Stack Developer and React Native engineer based in Kolkata, India. My journey into development began out of curiosity about how apps and websites work, and over time that curiosity evolved into a deep passion for building scalable, real-world software. Since then, I’ve spent countless hours learning, experimenting, and developing applications that solve practical problems and deliver meaningful user experiences.
+
+I primarily work with the **JavaScript ecosystem end-to-end**. On the mobile side, I build cross-platform applications using **React Native and Expo**, focusing on performance, smooth user experiences, and real-time functionality. For web applications, I use **Next.js with TailwindCSS** to create modern, responsive interfaces that are both visually appealing and highly performant. On the backend, I rely on **Node.js, Express, and MongoDB** to design robust APIs, manage databases, and build scalable server-side architectures. My experience also includes working with **REST APIs, WebSockets for real-time features, authentication systems, and cloud deployments** using platforms such as **Vercel and Render**.
+
+Throughout my development journey, I’ve built a variety of projects ranging from **real-time GPS tracking systems and live chat applications to full-stack web platforms and developer tools**. These projects have helped me develop strong problem-solving skills and a practical understanding of building reliable software from idea to deployment.
+
+Currently, I’m focused on deepening my expertise in **TypeScript, advanced Next.js architecture, and modern cloud infrastructure**, while continuing to build and ship projects that improve my skills and create real value. I strongly believe in learning by building, continuously improving my craft, and staying curious about new technologies that push the boundaries of modern software development.
+
               </p>
 
               <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-3">
