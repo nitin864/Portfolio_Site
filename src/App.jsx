@@ -1,29 +1,37 @@
 import React from "react";
+import StatusBadge from "./components/StatusBadge";
+import ProjectRow from "./components/ProjectRow";
+import ExperienceRow from "./components/ExperienceRow";
+
+/* ─── DATA ─────────────────────────────────────────────────────────────────── */
 
 const projects = [
   {
     name: "CineCue",
-    desc: "A stylish, robust movie discovery app — search and explore movies with a polished UI.",
-    tech: ["JavaScript", "React Native", "TMDB API"],
+    desc: "A stylish movie discovery app — search and explore films with a polished React Native UI.",
+    tech: ["React Native", "JavaScript", "TMDB API"],
     url: "https://github.com/nitin864/CineCue",
+    apkUrl: "/CineCue.apk",
   },
   {
     name: "Real Time Tracking System",
-    desc: "Live location tracking built with Node.js, Socket.IO and Leaflet for map visualisation.",
+    desc: "Live GPS location tracking with Node.js, Socket.IO, and Leaflet map visualisation.",
     tech: ["Node.js", "Socket.IO", "Leaflet.js"],
     url: "https://github.com/nitin864/Real_time_tracking_system",
+    liveUrl: "https://real-time-tracking-system-liep.onrender.com/",
   },
   {
     name: "Socket.io Chat",
-    desc: "A minimal real-time chat app using Express and Socket.IO for instant messaging.",
+    desc: "Minimal real-time chat app built with Express and Socket.IO for instant messaging.",
     tech: ["HTML", "Node.js", "Socket.IO"],
     url: "https://github.com/nitin864/Socket.io_chat",
   },
   {
-    name: "Daphine - A Chat App",
-    desc: "Another chat-focused project showcasing realtime features and web sockets.",
+    name: "Daphine — Chat App",
+    desc: "Full-stack chat application showcasing WebSocket-driven real-time communication.",
     tech: ["JavaScript", "Socket.IO", "Express"],
     url: "https://github.com/nitin864/Daphine_a_chat_app",
+    liveUrl: "https://daphine.vercel.app",
   },
 ];
 
@@ -37,258 +45,166 @@ const techStack = [
   "React Native",
   "Git",
   "Vite",
-  "java",
+  "Java",
 ];
+
+/*
+ * ⚠️  FLAGGED — Experience section:
+ * No employer/company data was found in the original codebase.
+ * The rows below are PLACEHOLDERS showing the structure only.
+ * Please replace with your actual work history.
+ */
+const experience = [
+  {
+    company: "Accesco Living",
+    role: "Back End Developer",
+    period: "Aug 2026 – Present",
+    type: "Internship",
+  },
+  {
+    company: "Zaalima Development Pvt. Ltd",
+    role: "Java Developer Intern",
+    period: "Mar 2026 – Jul 2026",
+    type: "Internship",
+  },
+];
+
+/* ─── APP ───────────────────────────────────────────────────────────────────── */
 
 export default function PortfolioApp() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-indigo-900 to-black text-gray-100 p-4 sm:p-6 lg:p-8 font-sans">
-      <header className="max-w-6xl mx-auto flex items-center justify-between py-6">
-        <div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 to-pink-400 bg-clip-text text-transparent">
-            Nitin — Fullstack & Android Dev
-          </h1>
-          <p className="mt-2 text-sm sm:text-base text-gray-300">
-            Kolkata · Next.js, JS, TS, React, Node.js ,Express· exploring Java
-          </p>
+    <div className="site-wrapper">
+      {/* ── NAV ── */}
+      <nav className="site-nav" aria-label="Primary navigation">
+        <span className="site-nav__name">Nitin Raj</span>
+        <div className="site-nav__links">
+          <a href="#work" className="nav-link">Work</a>
+          <a href="#contact" className="nav-link">Contact</a>
         </div>
-        <nav className="flex items-center gap-3">
-          <a
-            href="https://github.com/nitin864"
-            target="_blank"
-            rel="noreferrer"
-            className="px-3 py-1 sm:px-4 sm:py-2 border border-indigo-500 rounded-xl text-xs sm:text-sm hover:bg-indigo-600/30 transition"
-          >
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/nitin864"
-            target="_blank"
-            rel="noreferrer"
-            className="px-3 py-1 sm:px-4 sm:py-2 bg-indigo-600 rounded-xl text-xs sm:text-sm hover:bg-indigo-500 transition"
-          >
-            LinkedIn
-          </a>
-        </nav>
-      </header>
+      </nav>
 
-      <main className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* HERO (spans 2 cols on lg) */}
-        <section className="lg:col-span-2 bg-gray-800/40 backdrop-blur rounded-2xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-gray-700 relative overflow-visible">
-          {/* Avatar on left, intro on right */}
-          <div className="flex flex-col lg:flex-row gap-6">
-            <div className="flex-shrink-0 mx-auto lg:mx-0">
-              <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-black shadow-lg">
-                <img
-                  src="/images/pro.jpg"
-                  alt="Profile"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="flex-1">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold">
-                Hi — I'm Nitin
-              </h2>
-
-              <ul className="mt-4 text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed space-y-2 list-disc list-inside">
-  <li>Full-Stack Developer & React Native Engineer based in Kolkata, India.</li>
-  <li>4+ years of hands-on experience building production-ready web and mobile applications.</li>
-  <li>Self-taught developer who turned curiosity about technology into building real products.</li>
-  <li>Built real-time systems, live chat apps, GPS tracking solutions, and full-stack platforms.</li>
-  <li>Core stack: React Native + Expo, Next.js + TailwindCSS, Node.js + Express + MongoDB.</li>
-  <li>Comfortable with REST APIs, WebSockets, authentication systems, and scalable backends.</li>
-  <li>Experienced with cloud deployments using platforms like Vercel and Render.</li>
-  <li>Currently exploring TypeScript, advanced Next.js architecture, and cloud infrastructure.</li>
-  <li>Focused on building clean, scalable, and user-focused applications.</li>
-</ul>
-
-              <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-3">
-                <a
-                  href="#projects"
-                  className="w-full sm:w-auto text-center px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-500 transition text-sm sm:text-base"
-                >
-                  View Projects
-                </a>
-                <a
-                  href="#contact"
-                  className="w-full sm:w-auto text-center px-4 py-2 border border-gray-600 rounded-lg hover:bg-gray-700/40 transition text-sm sm:text-base"
-                >
-                  Contact
-                </a>
-              </div>
-            </div>
+      <main className="site-main">
+        {/* ─────────── HERO ─────────── */}
+        <section className="section hero" aria-label="Introduction">
+          {/* Photo */}
+          <div className="hero__photo-wrap">
+            <img
+              src="/images/pro.jpeg"
+              alt="Nitin Raj"
+              className="hero__photo"
+              width="80"
+              height="80"
+            />
           </div>
 
-          <aside className="space-y-6 mt-7">
-            <div className="p-4 rounded-2xl bg-gray-800/50 border border-gray-700 shadow-xl">
-              <h4 className="font-semibold text-sm">Quick Stats</h4>
-              <div className="mt-4 grid grid-cols-4 gap-2 text-center">
-                <div>
-                  <div className="text-2xl font-bold">10</div>
-                  <div className="text-xs text-gray-400">Projects</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold">7</div>
-                  <div className="text-xs text-gray-400">GitHub Followers</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold">5</div>
-                  <div className="text-xs text-gray-400">Following</div>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold">590+</div>
-                  <div className="text-xs text-gray-400">
-                    LinkedIn Followers
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-gray-800/50 border border-gray-700 shadow-xl">
-              <h4 className="font-semibold text-sm">Tech Stack</h4>
-              <div className="mt-3 flex flex-wrap gap-2">
-                {techStack.map((t) => (
-                  <span
-                    key={t}
-                    className="px-2 py-1 text-xs bg-gray-700/60 rounded-full border border-gray-600"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </aside>
-
-          {/* small summary cards under hero */}
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="p-4 bg-gray-900/40 rounded-lg border border-gray-700">
-              <h3 className="text-xs text-gray-400 uppercase tracking-wide">
-                Contact
-              </h3>
-              <div className="mt-3 text-sm text-gray-300">
-                <div>Email: rajnitin793@gmail.com</div>
-                <div className="mt-1">Location: Kolkata, IN</div>
-              </div>
-            </div>
+          {/* Name + badge */}
+          <div className="hero__identity">
+            <h1 className="hero__name">Nitin Raj</h1>
+            <StatusBadge isOpen={true} />
           </div>
-        </section>
 
-        {/* PROJECTS (full width below on mobile) */}
-        <section id="projects" className="lg:col-span-3 mt-2">
-          <h3 className="text-xl sm:text-2xl font-bold mb-4">
-            Featured Projects
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((p) => (
-              <article
-                key={p.name}
-                className="p-4 bg-gray-800/40 rounded-lg border border-gray-700 shadow hover:translate-y-[-4px] transition-transform"
-              >
-                <h4 className="text-lg font-semibold">
-                  <a
-                    href={p.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:underline"
-                  >
-                    {p.name}
-                  </a>
-                </h4>
-                <p className="mt-2 text-sm text-gray-300">{p.desc}</p>
-                <div className="mt-3 flex flex-wrap gap-2">
-                  {p.tech.map((t) => (
-                    <span
-                      key={t}
-                      className="text-xs px-2 py-1 bg-gray-700/60 rounded-full border border-gray-600"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
+          {/* Role + location */}
+          <p className="hero__role">
+            Full-Stack &amp; React Native Developer
+            <span className="hero__sep" aria-hidden="true"> · </span>
+            <span className="hero__location">Kolkata, India</span>
+          </p>
 
-                {p.name === "CineCue" && (
-                  <a
-                    href="/CineCue.apk"
-                    download
-                    className="mt-4 inline-flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-500 text-sm rounded-md transition"
-                  >
-                    Download APK
-                  </a>
-                )}
-                {p.name === "Socket.io Chat" && (
-                  <a href="https://github.com/nitin864/Socket.io_chat"
-                  className="mt-4 inline-flex items-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-500 text-sm rounded-md transition">
-                    View Code
-                  </a>
-                )}
+          {/* Bio — condensed from the original 9-bullet list */}
+          <p className="hero__bio">
+            I build web and mobile products from the ground up — real-time systems,
+            chat apps, GPS tracking tools, and full-stack platforms.{" "}
+            Self-taught, with four-plus years of shipping production-ready code in
+            React, Node.js, and React Native.{" "}
+            Currently exploring TypeScript and advanced Next.js architecture while
+            staying focused on clean, user-centred work.
+          </p>
 
-                {/* Live Demo button only for the two requested projects */}
-                {(p.name === "Real Time Tracking System" ||
-                  p.name === "Daphine - A Chat App") && (
-                  <div className="mt-4 flex gap-2">
-                    <a
-                      href={
-                        p.name === "Real Time Tracking System"
-                          ? "https://real-time-tracking-system-liep.onrender.com/"
-                          : "https://daphine.vercel.app"
-                      }
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex items-center gap-2 px-3 py-2 bg-green-600 hover:bg-green-500 text-sm rounded-md transition"
-                      aria-label={`${p.name} live demo`}
-                    >
-                      <svg
-                        className="w-3 h-3"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path d="M10 8l6 4-6 4V8z" fill="white" />
-                      </svg>
-                      Live Demo
-                    </a>
-                  </div>
-                )}
-              </article>
+          {/* Tech stack */}
+          <div className="hero__stack" aria-label="Technology stack">
+            {techStack.map((t) => (
+              <span key={t} className="tag">{t}</span>
             ))}
           </div>
         </section>
 
-        <section id="contact" className="lg:col-span-3 mt-6">
-          <div className="p-5 rounded-lg bg-gray-800/40 border border-gray-700 shadow-xl">
-            <h3 className="text-lg font-bold">Get in touch</h3>
-            <p className="mt-2 text-sm text-gray-300">
-              I'm open for collaborations, freelance work, or full-stack
-              projects. Reach me at{" "}
-              <a href="mailto:rajnitin793@gmail.com" className="underline">
-                rajnitin793@gmail.com
-              </a>
-              .
-            </p>
-            <div className="mt-4 flex flex-col sm:flex-row gap-3">
-              <a
-                href="https://github.com/nitin864"
-                target="_blank"
-                rel="noreferrer"
-                className="inline-block px-4 py-2 bg-indigo-600 rounded-lg hover:bg-indigo-500 text-sm sm:text-base text-center w-full sm:w-auto"
-              >
-                Visit GitHub
-              </a>
-              <a
-                href="#projects"
-                className="inline-block px-4 py-2 border border-gray-600 rounded-lg text-sm sm:text-base text-center w-full sm:w-auto"
-              >
-                See projects
-              </a>
+        <hr className="divider" />
+
+        {/* ─────────── EXPERIENCE ─────────── */}
+        <section id="experience" className="section" aria-label="Experience">
+          <h2 className="section__title">Experience</h2>
+
+          {experience.length > 0 ? (
+            <div className="exp-list">
+              {experience.map((e) => (
+                <ExperienceRow key={e.company + e.period} {...e} />
+              ))}
             </div>
+          ) : (
+            /*
+             * ⚠️  FLAGGED — No work experience data found in the codebase.
+             * Add your company/role/period entries to the `experience` array
+             * at the top of this file to populate this section.
+             */
+            <p className="empty-notice">
+              Work history coming soon.{" "}
+              <span className="muted">(Add your entries to the <code>experience</code> array in App.jsx.)</span>
+            </p>
+          )}
+        </section>
+
+        <hr className="divider" />
+
+        {/* ─────────── PROJECTS ─────────── */}
+        <section id="work" className="section" aria-label="Projects">
+          <h2 className="section__title">Projects</h2>
+          <div className="project-list">
+            {projects.map((p) => (
+              <ProjectRow key={p.name} {...p} />
+            ))}
+          </div>
+        </section>
+
+        <hr className="divider" />
+
+        {/* ─────────── CONTACT / FOOTER ─────────── */}
+        <section id="contact" className="section contact" aria-label="Contact">
+          <h2 className="section__title">Get in touch</h2>
+          <p className="contact__line">
+            Open to collaborations, freelance, and full-stack projects.
+          </p>
+
+          <div className="contact__links">
+            <a href="mailto:rajnitin793@gmail.com" className="contact__link">
+              rajnitin793@gmail.com
+            </a>
+            <a
+              href="https://github.com/nitin864"
+              target="_blank"
+              rel="noreferrer"
+              className="contact__link"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nitin864"
+              target="_blank"
+              rel="noreferrer"
+              className="contact__link"
+            >
+              LinkedIn
+            </a>
+            {/*
+             * ⚠️  FLAGGED — No resume link found. Replace '#' with your
+             * actual resume URL or hosted PDF path.
+             */}
+            {/* <a href="#" className="contact__link">Résumé</a> */}
           </div>
         </section>
       </main>
 
-      <footer className="max-w-6xl mx-auto mt-10 py-8 text-center text-gray-500">
-        @{new Date().getFullYear()} All rights reserved.
+      <footer className="site-footer">
+        <span>© {new Date().getFullYear()} Nitin Raj</span>
       </footer>
     </div>
   );
