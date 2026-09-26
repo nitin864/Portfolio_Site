@@ -10,7 +10,7 @@ const projects = [
     desc: "Real-time satellite conjunction detection system tracking 16,000+ live satellites using SGP4 orbital propagation. Reduced collision-pair comparisons from ~128M (naive) to a few hundred per group via a two-stage spatial filter.",
     detail: "6-endpoint REST API · automated background scheduler · 3D interactive globe with live satellite positions and orbital paths.",
     tech: ["Python", "FastAPI", "SQLAlchemy", "Skyfield/SGP4", "React", "Three.js"],
-    url: "https://github.com/nitin864",
+    url: "https://github.com/nitin864/Orbital-Risk-Engine",
     featured: true,
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     desc: "Full-stack project management platform with real-time WebSocket updates, organization-based workspace architecture, and role-based access control. Improved team communication efficiency by 40% via Socket.IO activity feeds.",
     detail: null,
     tech: ["React.js", "Node.js", "MongoDB", "Express.js", "Socket.IO"],
-    url: "https://github.com/nitin864",
+    url: "https://github.com/nitin864/WorkSpaceDev",
     featured: false,
   },
   {
@@ -143,7 +143,7 @@ export default function PortfolioApp() {
             </p>
 
             <p className="hero__bio">
-              I design and ship real-world products — satellite tracking engines, 
+              I design and ship real-world products — satellite tracking engines,
               collaborative platforms, real-time chat systems, and mobile apps.
               3+ years building with React, Node.js, and React Native.
               Currently diving deep into cybersecurity and aerospace software engineering.
@@ -246,7 +246,7 @@ export default function PortfolioApp() {
           <p className="section__label">Projects</p>
           <div className="project-list">
             {projects.filter(p => !p.featured).map((p, i) => (
-              <article key={p.id} className="project-row" style={{"--delay": `${i * 60}ms`}}>
+              <article key={p.id} className="project-row" style={{ "--delay": `${i * 60}ms` }}>
                 <div className="project-row__header">
                   <div>
                     <a
